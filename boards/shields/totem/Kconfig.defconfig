@@ -23,6 +23,17 @@ config BT_MAX_PAIRED
 
 endif
 
+if SHIELD_TOTEM_DONGLE_DISPLAY
+
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+endif
+
+endif
+
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
 
 config ZMK_SPLIT

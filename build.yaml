@@ -1,9 +1,7 @@
 include:
   # TOTEM
-  # - board: nice_nano
-  #   shield: totem_dongle dongle_display
   - board: nice_nano
-    shield: totem_dongle
+    shield: totem_dongle totem_dongle_display dongle_display
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
