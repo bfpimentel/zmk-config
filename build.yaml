@@ -1,5 +1,15 @@
 include:
+  # TOTEM
+  # - board: nice_nano
+  #   shield: totem_dongle dongle_display
+  - board: nice_nano
+    shield: totem_dongle
   - board: seeeduino_xiao_ble
     shield: totem_left
   - board: seeeduino_xiao_ble
     shield: totem_right
+  # Common
+  - board: nice_nano
+    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
