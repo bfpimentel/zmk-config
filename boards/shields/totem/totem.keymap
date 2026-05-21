@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define NAV  1
+#define NUM  1
 #define SYM  2
 #define ADJ  3
 
@@ -53,7 +53,7 @@
                 compatible = "zmk,combos";
 
                 combo_inner_thumbs_esc {
-                        timeout-ms = <50>;
+                        timeout-ms = <100>;
                         key-positions = <34 35>;
                         bindings = <&kp ESC>;
                 };
@@ -68,41 +68,41 @@
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \\    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    SYM    ┃    GUI    ┃ NAV/SPC   ┃   ┃ NAV/RET   ┃   BSPC    ┃    SYM    ┃
+//                                     ┃    SYM    ┃    GUI    ┃ NUM/SPC   ┃   ┃ NUM/RET   ┃   BSPC    ┃    SYM    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
                 base_layer {
-label = "BASE";
-bindings = <
-                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &hml LALT S &hml LCTRL D &hml LSHFT F &kp G         &kp H       &hmr RSHFT J &hmr RCTRL K &hmr LALT L &kp SEMI
-    &kp TAB     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &mo SYM     &kp LGUI    &lt NAV SPACE   &lt NAV RET &kp BSPC    &mo SYM
+                    display-name = "base";
+                    bindings = <
+                 &kp Q        &kp W        &kp E        &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P
+                 &kp A        &hml LALT S  &hml LCTRL D &hml LSHFT F &kp G           &kp H        &hmr RSHFT J &hmr RCTRL K &hmr LALT L  &kp SEMI
+    &kp TAB      &kp Z        &kp X        &kp C        &kp V        &kp B           &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp BSLH
+                                           &mo SYM      &kp LGUI     &lt NUM SPACE   &lt NUM RET  &kp BSPC     &mo SYM
                         >;
                 };
 
-                nav_layer {
-label = "NAV";
-bindings = <
+                num_layer {
+                    display-name = "number";
+                    bindings = <
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
                 &trans      &trans      &trans      &trans      &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-    &trans      &trans      &trans      &trans      &trans      &trans          &kp LBKT    &kp RBKT    &kp MINUS   &kp EQUAL   &trans      &trans
+    &trans      &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans
                                         &studio_unlock &trans   &trans          &trans      &trans      &trans
                         >;
                 };
 
                 sym_layer {
-label = "SYM";
-bindings = <
-                &kp F1      &kp F2      &kp F3      &kp F4      &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
-                &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
-    &trans      &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans
-                                        &trans      &trans      &trans          &mo ADJ     &trans      &trans
+                    display-name = "symbol";
+                    bindings = <
+                &trans      &trans      &trans      &trans      &trans          &kp GRAVE   &kp TILDE   &kp SQT     &kp DQT     &trans
+                &trans      &trans      &trans      &trans      &trans          &kp LBRC    &kp RBRC    &kp LPAR    &kp RPAR    &trans
+    &trans      &trans      &trans      &trans      &trans      &trans          &kp LBKT    &kp RBKT    &kp MINUS   &kp EQUAL   &trans      &trans
+                                        &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 };
 
-                adjust_layer {
-label = "ADJ";
-bindings = <
+                adj_layer {
+                    display-name = "adjust";
+                    bindings = <
                 &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
                 &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
     &trans      &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans
